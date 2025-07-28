@@ -64,6 +64,14 @@
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>github-api</artifactId>
     </dependency>
+    <!-- Main GitHub Plugin dependency - IMPORTANT: Update version to match your Jenkins server -->
+    <!-- Common versions: 1.37.0, 1.40.0, 1.43.0 -->
+    <!-- Check your Jenkins server under Manage Jenkins > Plugins > Installed plugins for the exact version -->
+    <dependency>
+      <groupId>com.coravy.hudson.plugins.github</groupId>
+      <artifactId>github</artifactId>
+      <version>1.43.0</version>
+    </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-cps</artifactId>

@@ -26,6 +26,23 @@ This plugin has been installed, along with the [General API Plugin](https://gith
 Only GitHub Apps with proper permissions can publish checks, this [guide](https://github.com/jenkinsci/github-branch-source-plugin/blob/master/docs/github-app.adoc) helps you authenticate your Jenkins instance as a GitHub App. 
 The permission *read/write* on *Checks* needs to be granted in addition to the ones already mentioned in the guide.
 
+### Dependency Compatibility
+
+This plugin depends on the main GitHub Plugin. To ensure compatibility with your Jenkins server:
+
+1. Check your Jenkins server's installed GitHub Plugin version under **Manage Jenkins > Plugins > Installed plugins**
+2. If building from source, update the version in `pom.xml` in the GitHub plugin dependency:
+   ```xml
+   <dependency>
+     <groupId>com.coravy.hudson.plugins.github</groupId>
+     <artifactId>github</artifactId>
+     <version>YOUR_SERVER_VERSION</version>
+   </dependency>
+   ```
+3. Rebuild the plugin with `mvn clean package`
+
+Common GitHub Plugin versions: 1.37.0, 1.40.0, 1.43.0
+
 ## Features
 
 ### Build Status Check

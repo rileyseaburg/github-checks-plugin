@@ -1,0 +1,56 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore'
+      - 'dependencies'
+  - title: '📚 Documentation'
+    labels:
+      - 'documentation'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
+template: |
+  ## Changes
+
+  $CHANGES
+  
+  ## Installation
+  
+  Download the `github-checks.hpi` file and install it through Jenkins Plugin Manager:
+  1. Go to **Manage Jenkins** > **Plugins** > **Advanced**
+  2. Upload the HPI file in the "Deploy Plugin" section
+  3. Restart Jenkins when prompted
+  
+  ## GitHub Plugin Compatibility
+  
+  This release is built against GitHub Plugin v1.43.0. If you're using a different version:
+  1. Check your Jenkins server's GitHub Plugin version under **Manage Jenkins** > **Plugins** > **Installed plugins**  
+  2. Ensure compatibility or rebuild from source if needed
+  
+  For more information, see the [README](https://github.com/rileyseaburg/github-checks-plugin/blob/main/README.md).
