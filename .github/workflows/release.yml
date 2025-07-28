@@ -176,7 +176,11 @@ jobs:
           PATCH=$((PATCH + 1))
           DEV_VERSION="$MAJOR.$MINOR.$PATCH-SNAPSHOT"
           
-          sed -i "s|<changelist>.*</changelist>|<changelist>$DEV_VERSION</changelist>|" pom.xml
+          if grep -q "<changelist>" pom.xml; then
+            sed -i "s|<changelist>.*</changelist>|<changelist>$DEV_VERSION</changelist>|" pom.xml
+          else
+            echo "Warning: <changelist> tag not found in pom.xml. Skipping version update."
+          fi
           
           git add pom.xml
           git commit -m "Prepare for next development iteration: $DEV_VERSION" || true
