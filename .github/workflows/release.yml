@@ -110,11 +110,11 @@ jobs:
           fi
           
           # Create release notes
-          cat > release_notes.md << 'EOF'
+          cat > release_notes.md << "EOF"
           ## Release v${{ steps.next_version.outputs.next_version }}
           
           ### Changes
-          $CHANGES
+          ${CHANGES}
           
           ### Installation
           Download the `github-checks.hpi` file and install it through Jenkins Plugin Manager:
