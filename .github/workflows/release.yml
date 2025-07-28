@@ -74,7 +74,7 @@ jobs:
       - name: Update POM version
         run: |
           # Update the changelist property to the new version
-          mvn versions:set -DnewVersion=${{ steps.next_version.outputs.next_version }}
+          mvn versions:set -DnewVersion=${{ steps.next_version.outputs.next_version }} -DgenerateBackupPoms=false
           
           # Also update the changelist property in pom.xml
           sed -i 's|<changelist>.*</changelist>|<changelist>${{ steps.next_version.outputs.next_version }}</changelist>|' pom.xml
