@@ -4,3 +4,8 @@ target/
 work/
 *.iml
 .DS_Store
+
+# Extracted plugin files
+META-INF/
+WEB-INF/
+help-*.html
